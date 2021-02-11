@@ -1,0 +1,14 @@
+--help 
+-t --tabletypes
+	shows different table type optione
+-f --file filepath
+	must be given
+-d --destination
+	file path where file with table should be saved
+-s -sheet
+	optional which sheet in excel should be used (default sheet 1)
+- --header
+	incluede header or not?
+- -choosen_tabletype
+	default pandas 
+
