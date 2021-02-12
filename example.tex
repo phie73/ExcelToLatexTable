@@ -1,0 +1,26 @@
+\documentclass[10pt]{article}
+ 
+\title{Latex Tabels}
+\date{}
+\author{sophia}
+
+%packages
+\usepackage{csvsimple}
+\usepackage{hyperref}
+ 
+\begin{document}
+ 
+\maketitle
+\tableofcontents
+ 
+\section{csv simple}
+\begin{itemize}
+    \item requierd: package csvsimple
+    \item \href{https://mirror.dogado.de/tex-archive/macros/latex/contrib/csvsimple/csvsimple.pdf}{doc csvsimple}
+\end{itemize}
+% \csvautotabular{csvfile.csv}
+\csvautotabular{/home/sophia/ExcelToLatexTable/csvfile.csv}
+\subsection{First Subsection}
+\subsubsection{First Subsubsection}
+ 
+\end{document}
