@@ -18,10 +18,17 @@ def filepath(destination, filename, mode):
 
 #csvsumple packag
 def csvsimple(tex_file, csv_file):
+    print('requierd: \\usepackage{csvautotabular}')
     f = open(tex_file, 'a')
     s = '\\csvautotabular{' + csv_file + '}'
     f.write(s)
     f.close()
+
+#pandas to_latex
+def pandas(csv_file, tex_file):
+    print('requierd: \\usepackage{booktabs}')
+    df = pd.read_csv(csv_file)
+    df.to_latex(buf=tex_file)
 
 
 #convert to csv

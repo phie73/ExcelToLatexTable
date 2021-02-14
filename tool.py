@@ -43,6 +43,8 @@ if file_extension == '.csv' or file_extension == '.xlsx':
         given_file = csv_file_path
     if choosen_table_type == '1':
         csvsimple(table_file, given_file)
+    if choosen_table_type == '2':
+        pandas(given_file, table_file)
 
     
 else:

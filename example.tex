@@ -1,12 +1,13 @@
 \documentclass[10pt]{article}
  
-\title{Latex Tabels}
+\title{Latex Tables}
 \date{}
 \author{sophia}
 
 %packages
 \usepackage{csvsimple}
 \usepackage{hyperref}
+\usepackage{booktabs}
  
 \begin{document}
  
@@ -20,7 +21,21 @@
 \end{itemize}
 % \csvautotabular{csvfile.csv}
 \csvautotabular{/home/sophia/ExcelToLatexTable/csvfile.csv}
-\subsection{First Subsection}
-\subsubsection{First Subsubsection}
+
+\section{py pandas}
+\begin{itemize}
+    \item requierd: package booktabs
+    \item \href{https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_latex.html}{pandas reference}
+\end{itemize}
+\begin{tabular}{llllll}
+    \toprule
+    {} &  a2 &  b2 &  c2 &  d2 &  e2 \\
+    \midrule
+    0 &  a3 &  b3 &  c3 &  d3 &  e3 \\
+    1 &  a4 &  b4 &  c4 &  d4 &  e4 \\
+    2 &  a5 &  b5 &  c5 &  d5 &  e5 \\
+    3 &  a6 &  b6 &  c6 &  d6 &  e7 \\
+    \bottomrule
+    \end{tabular}
  
 \end{document}
