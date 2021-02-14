@@ -18,7 +18,7 @@ parser.add_argument('-s', '--sheet',
 )
 parser.add_argument('-t', '--tabletypes',
     default=None,
-    help='show all aviable types of latex tables'
+    help='[help]: show all aviable types of latex tables'
 )
 parser.add_argument('-ct', '--choose_tabletypes',
     default=None,
@@ -45,6 +45,8 @@ if file_extension == '.csv' or file_extension == '.xlsx':
         csvsimple(table_file, given_file)
     if choosen_table_type == '2':
         pandas(given_file, table_file)
+    if choosen_table_type == '3':
+        basic(given_file, table_file)
 
     
 else:
