@@ -40,12 +40,23 @@ def basic(csv_file, tex_file):
     for i in range(cols):
         s += ' c'
     s += ' }\n'
-    f.write(s)
-    fc = open(csv_file, 'r')
-    s = fc.read().replace(',', ' & ').replace('\n',' \\\\ \n' )
-    f.write(s)
-    fc.close()
-    f.write('\\end{tabular} \n\\end{center}')
+    s2 = modify_line(csv_file)
+    s3 = s + s2 + '\\end{tabular} \n\\end{center}' 
+    f.write(s3)
+    f.close()
+
+#simple
+def simple(csv_file, tex_file):
+    f = open(tex_file, 'a')
+    f.write('\\begin{center}\n\\begin{tabular}{ ')
+    cols = col_csv(csv_file)
+    s = ''
+    for i in range(cols):
+        s += '| c '
+    s += '| }\n \\hline\n'
+    s2 = modify_line(csv_file)
+    s3 = s + s2 + '\\hline\n\\end{tabular}\n\\end{center}'
+    f.write(s3)
     f.close()
 
 
@@ -62,3 +73,10 @@ def col_csv(csv_file):
     r_value = len(next(r))
     f.close()
     return r_value
+
+#modify lines of csv file to fit latex code
+def modify_line(csv_file):
+    f = open(csv_file, 'r')
+    s = f.read().replace(',', ' & ').replace('\n',' \\\\ \n' )
+    f.close()
+    return s

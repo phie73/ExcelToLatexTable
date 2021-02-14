@@ -47,6 +47,8 @@ if file_extension == '.csv' or file_extension == '.xlsx':
         pandas(given_file, table_file)
     if choosen_table_type == '3':
         basic(given_file, table_file)
+    if choosen_table_type == '4':
+        simple(given_file, table_file)
 
     
 else:
