@@ -49,7 +49,8 @@ if file_extension == '.csv' or file_extension == '.xlsx':
         basic(given_file, table_file)
     if choosen_table_type == '4':
         simple(given_file, table_file)
-
+    if choosen_table_type == '5':
+        simple_2(given_file, table_file)
     
 else:
     raise Exception('file should be either an .csv or .xlsx file. Given was {}'.format(file_extension))
