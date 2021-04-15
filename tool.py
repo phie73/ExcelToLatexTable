@@ -38,8 +38,11 @@ filename, file_extension = os.path.splitext(given_file)
 table_file  = filepath(destination, filename, 0)
 csv_file_path = filepath(destination, filename, 1)
 if file_extension == '.csv' or file_extension == '.xlsx' or file_extension == '.ods':
-    if file_extension == '.xlsx' or file_extension == '.ods':
+    if file_extension == '.xlsx':
         to_csv(given_file, csv_file_path, sheet)
+        given_file = csv_file_path
+    if file_extension == '.ods':
+        ods_csv(given_file, csv_file_path, sheet)
         given_file = csv_file_path
     if choosen_table_type == '1':
         csvsimple(table_file, given_file)

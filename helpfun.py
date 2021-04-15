@@ -1,5 +1,6 @@
 import pandas as pd
 import csv 
+from pandas_ods_reader import read_ods
 
 #get file path
 def filepath(destination, filename, mode):
@@ -83,7 +84,7 @@ def swe_table(csv_file, tex_file):
         s += '|l'
     s += '|} \n \\hline \n'
     s2 = modify_line(csv_file).replace('\n', '\n\\hline\n')
-    s3 = s + s2 + '\\end{tabularx}\n\\end{center}'
+    s3 = s + s2 + '\\end{tabularx}\n\\end{table}'
     f.write(s3)
     f.close()
 
@@ -107,3 +108,7 @@ def modify_line(csv_file):
     s = f.read().replace(',', ' & ').replace('\n',' \\\\ \n' )
     f.close()
     return s
+
+def ods_csv(file, csv_file, sheet):
+    df = read_ods(file, sheet)
+    df.to_csv(csv_file, index=False)
