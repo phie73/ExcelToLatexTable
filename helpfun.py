@@ -73,6 +73,20 @@ def simple_2(csv_file, tex_file):
     f.write(s3)
     f.close()
 
+#table for swe
+def swe_table(csv_file, tex_file):
+    f = open(tex_file, 'a')
+    f.write('\\begin{table}\n\\centering\n\\tiny\n\\begin{tabularx}{\\textwidth}{')
+    cols = col_csv(csv_file)
+    s = ''
+    for i in range(cols):
+        s += '|l'
+    s += '|} \n \\hline \n'
+    s2 = modify_line(csv_file).replace('\n', '\n\\hline\n')
+    s3 = s + s2 + '\\end{tabularx}\n\\end{center}'
+    f.write(s3)
+    f.close()
+
 #other stuff
 #convert to csv
 def to_csv(excel_file, csv_file, sheet):
