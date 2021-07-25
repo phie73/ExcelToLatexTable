@@ -1,0 +1,16 @@
+-- overview of all possible types of tables --
+
+for reference please see example.tex or example.pdf
+
+[1] including .csv file 
+    using csvsimple package (https://mirror.dogado.de/tex-archive/macros/latex/contrib/csvsimple/csvsimple.pdf)
+[2] using py pandas package
+    https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_latex.html
+
+    
+
+
+
+
+
+https://www.overleaf.com/learn/latex/Tables
